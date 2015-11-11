@@ -52,9 +52,9 @@ Sudo Code
 
 이것에 따른 class 구현
 
-0,1,5 -> AppMain class -> 게임 메뉴를 출력하고 게임을 시작하고 종료하게 함.
-1-1 -> Yut class -> 윷놀이 판을 출력해주고 움직임에 따라 말을 움직임?
-2 -> Player class -> 플레이어의 말을 움직임 + Hores 라는 클래스 상속
-3 -> Com class -> 컴퓨터의 말을 움직임 + Hores 라는 클래스 상속
+0,1,5 -> kr.ac.kookmin.oss.AppMain class -> 게임 메뉴를 출력하고 게임을 시작하고 종료하게 함.
+1-1 -> kr.ac.kookmin.oss.Yut class -> 윷놀이 판을 출력해주고 움직임에 따라 말을 움직임?
+2 -> kr.ac.kookmin.oss.Player class -> 플레이어의 말을 움직임 + Hores 라는 클래스 상속
+3 -> kr.ac.kookmin.oss.Com class -> 컴퓨터의 말을 움직임 + Hores 라는 클래스 상속
 
 -> 일단 이렇게 시도해서 만들기 11.11 20113273 김태훈
