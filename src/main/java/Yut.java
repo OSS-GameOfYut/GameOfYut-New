@@ -93,7 +93,6 @@ public class Yut {
             else if(i==com.getIndex()) System.out.print("c");
             else System.out.print("_");
         }System.out.println();
-
         //말 업고 잡는 코드 구현은 Yut 클래스 안에서 하는게 좋겠습니다.
     }
 
