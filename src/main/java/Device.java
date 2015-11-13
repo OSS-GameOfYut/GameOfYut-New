@@ -4,7 +4,7 @@
 
 public class Device {
 
-    private int index;
+    private int index; //말의 위치
     private String type;
 
     int locate=0;
@@ -15,11 +15,11 @@ public class Device {
         type = "__";
     }
 
+    //move
     void move(int result) {
 
         System.out.println("moved like "+result);
     }
-
     public int getIndex() {
         return locate;
     }
