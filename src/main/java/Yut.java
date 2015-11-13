@@ -11,6 +11,9 @@ public class Yut {
     private final int raceRoom = 10;
 // player 와 computer 어떻게 표현해야 되는지
 
+    public void test(){
+
+    }
 
     // Initialize Yut Matrix
     public Yut() {
