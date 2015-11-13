@@ -3,34 +3,28 @@ public class Device {
 
     private int index;
     private String type;
-
-    int locate=0;
-    int number;
+    private int count = 0;
 
     public Device(){
         index = 0;
         type = "__";
     }
 
-    void move(int result) {
+    public Device(int num){
+        index = 0;
+        count = num;
+    }
 
-        System.out.println("moved like "+result);
+    public void move(int result) {
+        index += result;
     }
 
     public int getIndex() {
-        return locate;
+        return index;
     }
 
     public String getType() {
         return type;
     }
-
-
-    void input(int yut){
-        yut++;
-        locate+=yut;
-        move(yut);
-    }
-
 
 }
