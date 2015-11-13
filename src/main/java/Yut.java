@@ -6,6 +6,8 @@ import java.util.Random;
 public class Yut {
     private String[] yutMatrix;
     private String[] yut = {"DOE", "GAE", "GIRL", "YUT", "MOE"};
+    private String typeOfPlayer = "o ";
+    private final int playerNum = 2;
     private final int raceRoom = 10;
 // player 와 computer 어떻게 표현해야 되는지
 
@@ -16,12 +18,12 @@ public class Yut {
         for (int i = 0 ; i < yutMatrix.length ; i++)
             yutMatrix[i] = "__";
 
-        // 이런식으로 표현해야되는데 일단 고민
+        yutMatrix[0] = "ox";   // 이런식으로 표현해야되는데 일단 고민
     }
 
     // Show Yut Matrix
     public void show() {
-        for(int i=0 ; i < yutMatrix.length ; i++)
+        for(int i=0 ; i<yutMatrix.length ; i++)
             System.out.print(yutMatrix[i] + " ");
 //                if(yutMatrix[i][j] == 1) // 표현 방식 바꾸려면 이렇게도 가능한데 어떤 거 쓸지는 고민
 //                    System.out.print("X");
@@ -38,7 +40,7 @@ public class Yut {
         show();
 
         // Player or Compute Two Hores Goal in is Game Over
-        while (!(yutMatrix[yutMatrix.length - 1].equals("__")))
+        while (yutMatrix[9].equals("o ") || yutMatrix[9].equals("x "))
         {
             // Player Phase
             int move = throwYut();
@@ -55,6 +57,8 @@ public class Yut {
 
             show();
         }
+
+
     }
 
     // Throw yut
@@ -76,4 +80,5 @@ public class Yut {
         for (int i=0; i<30; i++)
             System.out.println();
     }
+
 }
