@@ -1,4 +1,7 @@
 
+//디바이스 클래스에서 구현할 메소드
+// -위치 출력, 위치 변경
+
 public class Device {
 
     private int index;
