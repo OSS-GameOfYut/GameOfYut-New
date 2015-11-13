@@ -8,10 +8,14 @@ public class AppMain {
     private boolean done;
     Yut yut;
 
-    public AppMain() {
+
+    public AppMain()   {
         in = new Scanner(System.in);
         done = false;
         yut = new Yut();
+    }
+
+    public void test(){
     }
 
     public void menu() {
