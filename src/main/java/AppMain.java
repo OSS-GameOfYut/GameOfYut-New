@@ -1,12 +1,47 @@
-
+import java.util.Scanner;
 
 /**
- * Created by ±Ë≈¬»∆ on 2015-11-09.
+ * Basic AppMain 11.13
  */
 public class AppMain {
-    public static void main(String args[]) {
+    private Scanner in;
+    private boolean done;
+    Yut yut;
 
-        System.out.println("Test Git to Yut Game");
-        System.out.println("Check GitHub upload");
+    public AppMain() {
+        in = new Scanner(System.in);
+        done = false;
+        yut = new Yut();
+    }
+
+    public void menu() {
+        do {
+            System.out.println("1. Game Start");
+            System.out.println("2. Game Exit");
+            System.out.print("Choose Number : ");
+            int num = in.nextInt();
+            switch(num) {
+                case 1:
+                    start();
+                    break;
+                case 2:
+                    done = true;
+                    System.out.println("Game Exit");
+                    break;
+                default:
+                    System.out.println("Wrong Input!");
+                    break;
+            }
+        } while(!done);
+    }
+
+    public void start() {
+        System.out.println("Game start!");
+        yut.start();
+    }
+
+    public static void main(String args[]) {
+        AppMain main = new AppMain();
+        main.menu();
     }
 }
