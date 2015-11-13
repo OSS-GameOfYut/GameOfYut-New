@@ -4,9 +4,12 @@ import java.util.Random;
  * Basic Yut 11.13
  */
 public class Yut {
+
     private String[] yutMatrix;
     private String[] yut = {"DOE", "GAE", "GIRL", "YUT", "MOE"};
     private final int raceRoom = 10;
+    private Device[] devices;
+    final int NUM_DEVICE = 2;
 // player 와 computer 어떻게 표현해야 되는지
 
 
@@ -16,7 +19,9 @@ public class Yut {
         for (int i = 0 ; i < yutMatrix.length ; i++)
             yutMatrix[i] = "__";
 
-        // 이런식으로 표현해야되는데 일단 고민
+        for(int i = 0 ; i < NUM_DEVICE ; i++)
+            devices[i]  = new Device();
+
     }
 
     // Show Yut Matrix
@@ -33,7 +38,9 @@ public class Yut {
 
     // Game start
     public void start() {
-        clean();
+        //clean();
+
+
         System.out.println("Play Game of Yut !!");
         show();
 
