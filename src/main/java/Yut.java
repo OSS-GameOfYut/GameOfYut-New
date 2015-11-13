@@ -4,8 +4,9 @@ import java.util.Random;
  * Basic Yut 11.13
  */
 public class Yut {
-    private int[][] yutMatrix;
+    private String[] yutMatrix;
     private String[] yut = {"DOE", "GAE", "GIRL", "YUT", "MOE"};
+    private String[] typeOfPlayer = {"o", "x"};
     final int playerNum = 2;
     final int raceRoom = 10;
 // player 와 computer 어떻게 표현해야 되는지
@@ -13,7 +14,7 @@ public class Yut {
 
     // Initialize Yut Matrix
     public Yut() {
-        yutMatrix = new int[playerNum][raceRoom]; // Basic 2 Line 10 room Yut race
+        yutMatrix = new String[raceRoom]; // Basic 2 Line 10 room Yut race
         yutMatrix[0][0] = 1; yutMatrix[0][1] = 1;   // 이런식으로 표현해야되는데 일단 고민
     }
 
