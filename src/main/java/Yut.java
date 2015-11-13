@@ -6,8 +6,8 @@ import java.util.Random;
 public class Yut {
     private String[] yutMatrix;
     private String[] yut = {"DOE", "GAE", "GIRL", "YUT", "MOE"};
-    private String typeOfPlayer = "o ";
-    private final int playerNum = 2;
+//    private String typeOfPlayer = "o ";
+//    private final int playerNum = 2;
     private final int raceRoom = 10;
 // player 와 computer 어떻게 표현해야 되는지
 
@@ -43,7 +43,7 @@ public class Yut {
         show();
 
         // Player or Compute Two Hores Goal in is Game Over
-        while (yutMatrix[9].equals("o ") || yutMatrix[9].equals("x "))
+        //while (yutMatrix[9].equals("o ") || yutMatrix[9].equals("x "))
         {
             // Player Phase
             int move = throwYut();
@@ -51,9 +51,7 @@ public class Yut {
 
             // 예제는 사람만 던져서 움직이는 식
 
-
             show();
-
             // Computer Phase
             move = throwYut();
             // 컴퓨터는 상황에 맞게 움직여야함 상황은 SudoCode 참고
