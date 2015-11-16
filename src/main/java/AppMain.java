@@ -3,6 +3,7 @@ import java.util.Scanner;
 /**
  * Basic AppMain 11.13
  */
+
 public class AppMain {
     private Scanner in;
     private boolean done;
@@ -40,8 +41,8 @@ public class AppMain {
     }
 
     public void start() {
-        System.out.println("Game start!");
-        yut.start();
+        System.out.println("Game play!");
+        yut.play();
     }
 
     public static void main(String args[]) {
