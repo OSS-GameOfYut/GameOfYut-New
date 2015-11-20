@@ -16,11 +16,15 @@ public class Device {
     }
     void move(int result) {
 
-        System.out.println("moved like "+result);
+        System.out.println("moved by "+result);
     }
 
     public int getIndex() {
         return locate;
+    }
+
+    public void setIndex(int loc){
+        locate=loc;
     }
 
     public String getType() {
