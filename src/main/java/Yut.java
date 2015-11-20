@@ -9,6 +9,9 @@ public class Yut {
     private String typeOfPlayer = "o ";
     private final int playerNum = 2;
     private final int raceRoom = 10;
+    private String[] board = new String[17];
+    Device user =new Device();
+    Device com = new Device();
 // player 와 computer 어떻게 표현해야 되는지
 
 
@@ -21,82 +24,98 @@ public class Yut {
         yutMatrix[0] = "ox";   // 이런식으로 표현해야되는데 일단 고민
     }
 
-    // Show Yut Matrix
-    public void show() {
-        for(int i=0 ; i<yutMatrix.length ; i++)
-            System.out.print(yutMatrix[i] + " ");
-//                if(yutMatrix[i][j] == 1) // 표현 방식 바꾸려면 이렇게도 가능한데 어떤 거 쓸지는 고민
-//                    System.out.print("X");
-//                else if(yutMatrix[i][j] == 0)
-//                    System.out.print("O");
-        System.out.println();
-
-    }
-
     // Game start
     public void start() {
         clean();
         System.out.println("Play Game of Yut !!");
 
-        Device user, com;
-        user = new Device();
-        com = new Device();
 
-        int num;
+        int turn=0, userPreIndex=0, comPreIndex=0;
         Scanner in = new Scanner(System.in);
-        num=in.nextInt();
+        for(int i=1; i<=16; i++) board[i]="_";
 
-        while(num!=0){
 
-            user.input(throwYut());
 
-            showBoard(user, com);
+        //윷을 던지기 위해 0 이상의 숫자를 선택하고 넣으세요!
+        System.out.println("pick num>0 and put to throw Yut for you!");
+        while(in.nextInt()!=0){ //받은 값이 0이 아닐 때 계속 돌림
+            if(turn%2==0) { //num이 짝수면 사용자 턴
+                user.input(throwYut());
 
-            num=in.nextInt();
+                if(user.getIndex()>16){
+                    System.out.println("user win!\n");
+                    break;
+                }
 
-            com.input(throwYut());
+                if(turn!=0) board[userPreIndex]="_";
+                userPreIndex=user.getIndex();
 
-            showBoard(user, com);
+                showBoard(turn);
+                //board[user.getIndex()]="u";
+                System.out.println("pick num>0 and put to throw Yut for enermy!");
+            }
+            else if(turn%2==1){ //num이 홀수면 컴퓨터 턴
+                com.input(throwYut());
 
-            num=in.nextInt();
+                if(user.getIndex()>16){
+                    System.out.println("com win!\n");
+                    break;
+                }
+                if(turn!=1) board[comPreIndex]="_";
+                comPreIndex=com.getIndex();
+
+                showBoard(turn);
+                //board[com.getIndex()]="c";
+                System.out.println("pick num>0 and put to throw Yut for you!");
+            }
+//            for(int i=1; i<17; i++) System.out.print(board[i]);
+//            System.out.println();
+            turn++;
         }
-
-//        show();
-//
-//        // Player or Compute Two Hores Goal in is Game Over
-//        while (yutMatrix[9].equals("o ") || yutMatrix[9].equals("x "))
-//        {
-//            // Player Phase
-//            int move = throwYut();
-//            // 플레이어에게 선택지 제시하고 그에 따라 움직임
-//
-//            // 예제는 사람만 던져서 움직이는 식
-//
-//
-//            show();
-//
-//            // Computer Phase
-//            move = throwYut();
-//            // 컴퓨터는 상황에 맞게 움직여야함 상황은 SudoCode 참고
-//
-//            show();
-//        }
-
-
     }
 
-    private void showBoard(Device user, Device com) {
+    private void showBoard(int who) {
 
-        for(int i=1; i<20; i++){
-            if(i==user.getIndex() && i==com.getIndex()) System.out.println("x");
-            else if(i==user.getIndex()) System.out.print("u");
-            else if(i==com.getIndex()) System.out.print("c");
-            else System.out.print("_");
-        }System.out.println();
+        if(user.getIndex()!=com.getIndex()){
+            board[user.getIndex()]="u";
+            board[com.getIndex()]="c";
+        }
+        else{//잡은 경우
+            //catchYou(who);
+        }
+
+//        for(int i=1; i<17; i++) System.out.print(board[i]);
+//            System.out.println();
+
+            for(int i=0; i<3 ; i++){
+                if(i==0){
+                    reversePrint(9);
+                    System.out.println();
+                }
+                else if(i==1){
+                    int n=10;
+                    for(int j=0; j!=6; j+=2) {
+                        System.out.println(board[n] + " \t" + board[n - 6-j]);
+                        n++;
+                    }
+                }
+                else{
+                    for(int j=13; j<17; j++) System.out.print(board[j]);
+                    System.out.println(board[1]);
+                }
+        }
+
         //말 업고 잡는 코드 구현은 Yut 클래스 안에서 하는게 좋겠습니다.
     }
 
-    // Throw yut
+    //보드 출력 메소드이므로 건들면 안됩니다.
+    private void reversePrint(int n){
+        if(n<=4) return;
+        System.out.print(board[n]);
+        reversePrint(n-1);
+    }
+
+    // Throw yut 윷을 던지는 메소드.
     public int throwYut() {
         Random r = new Random();
         System.out.println("Throws Yut!");
@@ -119,7 +138,9 @@ public class Yut {
 
     }
 
+    public void catchWho(int who){
 
+    }
 
     // Clean Console 일단 이런식으로 쓰는거라서 이렇게 해봄 반복 횟수는 출력보고 결정
     public void clean() {
