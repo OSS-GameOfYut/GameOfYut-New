@@ -4,27 +4,22 @@
 
 public class Device {
 
-    private int index;
-    private String type;
-
-    int locate=0;
-    int number;
+    private int locate; // 말의 위치
+    private String type; // 말의 상태
 
     public Device(){
-        index = 0;
+        locate = 0;
         type = "__";
     }
-    void move(int result) {
 
-        System.out.println("moved by "+result);
+    void showMove(int result) {
+        System.out.println("moved like "+result);
     }
 
-    public int getIndex() {
+    public void setLocate(int num) {locate = num;}
+
+    public int getLocate() {
         return locate;
-    }
-
-    public void setIndex(int loc){
-        locate=loc;
     }
 
     public String getType() {
@@ -33,10 +28,9 @@ public class Device {
 
 
     void input(int yut){
-        yut++;
+        yut++;  // yut 0~4 의 값이므로 + 1
         locate+=yut;
-        move(yut);
+        showMove(yut);
     }
-
 
 }
