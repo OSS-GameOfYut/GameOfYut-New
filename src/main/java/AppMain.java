@@ -1,14 +1,12 @@
 import java.util.Scanner;
 
 /**
- * Basic AppMain 11.13
+ * Basic AppMain 11.20
  */
-
 public class AppMain {
     private Scanner in;
     private boolean done;
     Yut yut;
-
 
     public AppMain()   {
         in = new Scanner(System.in);
@@ -16,8 +14,6 @@ public class AppMain {
         yut = new Yut();
     }
 
-    public void test(){
-    }
 
     public void menu() {
         do {
@@ -41,8 +37,8 @@ public class AppMain {
     }
 
     public void start() {
-        System.out.println("Game play!");
-        yut.play();
+        System.out.println("Game start!");
+        yut.start();
     }
 
     public static void main(String args[]) {
