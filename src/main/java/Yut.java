@@ -1,7 +1,7 @@
 import java.util.*;
 
 /**
- * Basic Yut 11/20
+ * Yut 1.1 11/27
  */
 public class Yut {
 

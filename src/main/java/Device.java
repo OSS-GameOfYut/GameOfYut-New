@@ -1,4 +1,4 @@
-// Device Version 11/20
+// Device Version 1.1 11/27
 
 public class Device {
 
