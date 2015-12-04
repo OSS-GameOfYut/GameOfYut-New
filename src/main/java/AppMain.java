@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * AppMain 1.1 11.27
+ * Basic AppMain 11.20
  */
 public class AppMain {
     private Scanner in;
