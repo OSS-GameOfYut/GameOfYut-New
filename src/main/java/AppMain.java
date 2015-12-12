@@ -1,8 +1,9 @@
 import java.util.Scanner;
 
 /**
- * Basic AppMain 11.27
- */
+ * AppMain
+ **/
+
 public class AppMain {
     private Scanner in;
     private boolean done;
@@ -14,25 +15,29 @@ public class AppMain {
         yut = new Yut();
     }
 
-
     public void menu() {
         do {
             System.out.println("1. Game Start");
             System.out.println("2. Game Exit");
             System.out.print("Choose Number : ");
-            int num = in.nextInt();
-            switch(num) {
-                case 1:
+
+            String input = in.nextLine();
+
+            if(input.length() != 1)
+                System.out.println("Wrong Input!");
+            else {
+                if (input.charAt(0) == '1') {
+                    yut = new Yut();
                     start();
-                    break;
-                case 2:
+                }
+                else if (input.charAt(0) == '2') {
                     done = true;
                     System.out.println("Game Exit");
-                    break;
-                default:
+                }
+                else
                     System.out.println("Wrong Input!");
-                    break;
             }
+
         } while(!done);
     }
 
@@ -46,3 +51,6 @@ public class AppMain {
         main.menu();
     }
 }
+
+
+
